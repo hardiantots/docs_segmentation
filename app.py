@@ -12,6 +12,12 @@ except ModuleNotFoundError as e:
     subprocess.Popen([f"{sys.executable} -m pip install torch torchvision --extra-index-url https://download.pytorch.org/whl/cpu"], shell=True)
     time.sleep(30)
 
+try: 
+    import cv2
+except ModuleNotFoundError as e:
+    subprocess.Popen([f"{sys.executable} -m pip install opencv-python"], shell=True)
+    time.sleep(30)
+
 from torchvision.models.segmentation import deeplabv3_mobilenet_v3_large
 from deeplearnmethod import deep_learning_scan, get_image_download_link
 
